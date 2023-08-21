@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <div id="myDiv">Hello, this is a div with ID.</div>
+    <p class="myClass">This is first paragraph with class.</p>
+    <p class="myClass">This is second paragraph with class.</p>
+    <p class="myClass">This is third paragraph with class.</p>
+    <button id="changeColorButton">Change Color</button>
+    <button id="changeFontSizeButton">Change Font Size</button>
+
+    <script>
+        // Using querySelector to select an element by ID
+        const myDiv = document.querySelector('#myDiv');
+
+        // Using querySelectorAll to select elements by class
+        const classElements = document.querySelectorAll('.myClass');
+
+        document.getElementById('changeColorButton').addEventListener('click', function() {
+            myDiv.style.color = 'red';
+
+            // Changing color for elements selected with querySelectorAll
+            classElements.forEach(element => {
+                element.style.color = 'blue';
+            });
+        });
+
+        document.getElementById('changeFontSizeButton').addEventListener('click', function() {
+            myDiv.style.fontSize = '24px';
+
+            // Changing font size for elements selected with querySelectorAll
+            classElements.forEach(element => {
+                element.style.fontSize = '20px';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+
+/* Body Styling  */
+
+body{
+    background-color: #E1ECC8;
+}
+
+
+.head{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+ }
+ 
+ .sub-heading{
+     margin: auto;
+ }
+ 
+ img{
+     height: 400px;
+     width: 300px;
+     /* margin-left: 40px; */
+    
+ 
+ }
+ 
+ .main-container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 40px;
+     /* background-color: #C4D7B2; */
+    
+ }
+ 
+ .para-one{
+     width: 80%;
+     margin-left: 200px;
+     text-align: justify;
+ }

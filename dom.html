@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <div class="parent">
+    <div id="oldElementId">This is the old element.</div>
+    <div id="htmlContainerId">
+        <p>This is the initial HTML content.</p>
+    </div>
+    <div id="textContainerId">
+        This is the initial text content.
+    </div>
+</div>
+
+    <button id="addButton">Add Element</button>
+    <button id="replaceButton">Replace Element</button>
+    <button id="removeButton">Remove Element</button>
+    <button id="htmlButton">Set HTML Content</button>
+    <button id="textButton">Set Text Content</button>
+
+    <script>
+        // Function to add a new element
+        document.getElementById('addButton').addEventListener('click', function() {
+            const newDiv = document.createElement('div');
+            newDiv.textContent = 'This is a new div element';
+            document.body.appendChild(newDiv);
+        });
+
+        // Function to replace an element
+          document.getElementById('replaceButton').addEventListener('click', function() {
+            const newDiv = document.createElement('div');
+            newDiv.textContent = 'This is a new div element';
+            newDiv.id = 'oldElementId';
+
+            const oldElement = document.getElementById('oldElementId');
+            const parent = oldElement.parentNode;
+            parent.replaceChild(newDiv, oldElement);
+        });
+
+        // Function to remove an element
+        document.getElementById('removeButton').addEventListener('click', function() {
+            // const elementToRemove = document.getElementById('oldElementId');
+            // elementToRemove.parentNode.removeChild(elementToRemove);
+            const old = document.getElementById('oldElementId');
+            const parent = old.parentNode;
+            parent.removeChild(old);
+        });
+
+        // Function to set HTML content
+        document.getElementById('htmlButton').addEventListener('click', function() {
+            const htmlContainer = document.getElementById('htmlContainerId');
+            const newHtmlContent = '<p>This is the new HTML content.</p>';
+            htmlContainer.innerHTML = newHtmlContent;
+        });
+
+        // Function to set text content
+        document.getElementById('textButton').addEventListener('click', function() {
+            const textContainer = document.getElementById('textContainerId');
+            const newTextContent = 'This is the new text content.';
+            textContainer.textContent = newTextContent;
+        });
+    </script>
+</body>
+</html>
